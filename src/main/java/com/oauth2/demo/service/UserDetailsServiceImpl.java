@@ -36,6 +36,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
         setAuthorize(authUser);
         authUser.setEnabled(true);
+        authUser.setAccountNonLocked(true);
         return authUser;
     }
 

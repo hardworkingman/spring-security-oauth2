@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-@Service("authProvider")
+//@Service // 多登录方式的时候可关闭
 @Slf4j
 public class MyAuthenticationProvider implements AuthenticationProvider {
 

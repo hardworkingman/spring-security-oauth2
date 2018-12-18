@@ -67,8 +67,7 @@ public class SmsIntegrationAuthenticator extends AbstractPreparableIntegrationAu
         String smsCode = integrationAuthentication.getAuthParameter("password");
         String username = integrationAuthentication.getAuthParameter("username");
         boolean validate = verificationCodeService.validate(smsToken, smsCode, username);
-        Result<Boolean> result = Result.buildSuccessData(validate);
-          if (!result.getData()) {
+        if (!validate) {
             throw new OAuth2Exception("验证码错误或已过期。");
         }
     }
